@@ -4,7 +4,7 @@ public class Arrays {
         a[0] = 10;
         a[1] = 20;
         a[2] = 30;
-        System.out.println("Values in array are:")
+        System.out.println("Values in array are:");
         System.out.println(a[0]);
         System.out.println(a[1]);
         System.out.println(a[2]);
