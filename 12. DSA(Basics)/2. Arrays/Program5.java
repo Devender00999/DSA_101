@@ -1,7 +1,7 @@
-// Largest Number
+// Remove Duplicate Element
 public class Program5 {
     public static void main(String[] args) {
-        int arr[] = {1, 1,1,1,1};
+        int arr[] = {1, 1,1,1,10,35};
         int nSize = removeDuplicate(arr);
         for (int i = 0; i < nSize; i++){
             System.out.print(arr[i]+" ");
@@ -11,7 +11,7 @@ public class Program5 {
     }
     
     // 10,20,20,20,30,40
-    // 10
+    // 10,20,30,40
     public static int removeDuplicateNaive(int arr[]){
         int tmpArr[] = new int[arr.length];
         tmpArr[0] = arr[0];
