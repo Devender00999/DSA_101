@@ -1,3 +1,3 @@
 # DSA_101
-This repository Only contains DSA programs :)
+Hey there! This repo only contains DSA Programs
 
