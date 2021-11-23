@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Program {
+    // function to convert decimal to binary
     static int decimalToBinary(String binary){
         int pow = binary.length() - 1,pos = 0,decimal = 0;
         while(pos <= binary.length() - 1){
