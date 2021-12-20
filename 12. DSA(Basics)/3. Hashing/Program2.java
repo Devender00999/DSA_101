@@ -15,27 +15,6 @@ class MyHash{
         return key % cap;
     }
 
-    // void insert(int key){
-    //     int hash = hash1(key);
-    //     if (table.get(hash) == -1){
-    //         table.set(hash, key);
-    //     }
-    //     else{
-    //         int i = hash+1;
-    //         while( i != hash){
-    //             if (i == cap){ 
-    //                 i =  i% cap;
-    //             }
-    //             if (table.get(i) == -1){
-    //                 table.set(i, key);
-    //             }
-                
-    //             i++;
-    //         }
-            
-    //     }
-    // }
-
     boolean insert(int key){
         if (size == cap) 
         return false;
