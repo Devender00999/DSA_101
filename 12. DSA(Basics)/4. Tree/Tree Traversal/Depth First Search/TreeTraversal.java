@@ -41,6 +41,11 @@ public class TreeTraversal {
         //    20  30
         //   /  \
         // 40   50
+
+        // output 
+        //Inorder:   40 20 50 10 30 
+        //Preorder:  10 20 40 50 30 
+        //Postorder: 40 50 20 30 10
         Node root = new Node(10);
         root.left = new Node(20);
         root.right = new Node(30);
