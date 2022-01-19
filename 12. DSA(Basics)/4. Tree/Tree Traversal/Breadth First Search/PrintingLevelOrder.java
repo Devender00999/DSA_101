@@ -42,14 +42,56 @@ public class PrintingLevelOrder {
             return;
         Queue<Node> queue = new LinkedList<Node>();
         queue.add(root);
+        int i = 0;
         while (queue.isEmpty() == false) {
             Node currentNode = queue.poll();
             System.out.print(currentNode.key + " ");
-            if (currentNode.left != null)
+            if (currentNode.left != null) {
                 queue.add(currentNode.left);
+            }
             if (currentNode.right != null) {
                 queue.add(currentNode.right);
             }
+        }
+    }
+
+    public static void printLevelLineByLine(Node root) {
+        if (root == null)
+            return;
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(root);
+        q.add(null);// because after root level will change
+        while (q.size() > 0) { // here size of q will 1 only if all of its items are traversed except null
+            Node curr = q.poll(); // deleted a node from q
+            if (curr != null) {
+                System.out.print(curr.key + " ");
+                if (curr.left != null)
+                    q.add(curr.left);
+                if (curr.right != null)
+                    q.add(curr.right);
+            } else {
+                System.out.println();
+                q.add(null);
+            }
+        }
+    }
+
+    public static void printLevelLineByLineV2(Node root) {
+        if (root == null)
+            return;
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(root);
+        while (q.isEmpty() == false) {
+            int length = q.size();
+            for (int i = 0; i < length; i++) {
+                Node curr = q.poll();
+                System.out.print(curr.key + " ");
+                if (curr.left != null)
+                    q.add(curr.left);
+                if (curr.right != null)
+                    q.add(curr.right);
+            }
+            System.out.println();
         }
     }
 
@@ -73,9 +115,16 @@ public class PrintingLevelOrder {
         // for (int i = 0; i < height(root); i++) {
         // printAtK(root, i);
         // }
-        printLevel(root);
 
-        System.out.println();
+        // printLevel(root);
+        // System.out.println();
+
+        // printLevelLineByLine(root);
+        // System.out.println();
+
+        printLevelLineByLineV2(root);
+        // System.out.println();
 
     }
+
 }

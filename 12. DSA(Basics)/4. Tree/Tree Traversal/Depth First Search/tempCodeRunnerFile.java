@@ -1,1 +1,1 @@
-        root.left.left = new Node(40);
+root
