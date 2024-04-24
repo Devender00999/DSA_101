@@ -19,26 +19,27 @@ def isPrime(num):
 import math
 def isPrimeV2(num):
   if num <= 1: return False
-  for i in range(2, int(math.sqrt(num))):
+  for i in range(2, int(math.sqrt(num) + 1)):
     if (num % i == 0):
       return False
   return True
+
 
 # more efficient solution
 # idea: we can save many iterations for n by checking if n % 2 == 0 and n % 3 == 0
 # T(n): O(sqrt(n))
 # S(n): O(1)
 import math
-def isPrimeV3(n): 
-   if (n <= 1): return False
-   if (n == 2 or n == 3): return False
-   if (n % 2 == 0 or n % 3 == 0): return False
-   for i in range(5, int(math.sqrt(n)),6):
-      if ((n % i == 0) or n % (i + 2) == 0):
+def isPrimeV3(N): 
+   if (N <= 1): return False
+   if (N == 2 or N == 3): return True
+   if (N % 2 == 0 or N % 3 == 0): return False
+   for i in range(5, int(math.sqrt(N)) + 1, 6):
+      if ((N % i == 0) or N % (i + 2) == 0):
          return False
    return True
 
 
-print(isPrime(1000007))
-print(isPrimeV2(1000007))
-print(isPrimeV3(1000007))
+# print(isPrime(1000007))
+# print(isPrimeV2(1000007))
+# print(isPrimeV3(1000007))
