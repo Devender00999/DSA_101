@@ -15,8 +15,8 @@ def computePower(x, n):
 # x^3 = x^2 * x
 # x^5 = x^2 * x^2 * x
 
-# T(n): Theta(log(n))
-# S(n): Theta(log(n))
+# T(n): θ(log(n))
+# S(n): θ(log(n))
 def computePowerV2(x, n):
    if (x == 0): return 0
    if (n == 0): return 1
@@ -24,5 +24,15 @@ def computePowerV2(x, n):
    if (n % 2 == 0): return res * res
    else: return res * res * x
 
+# T(n): θ(log(n))
+# S(n): θ(1)
+def computePowerV3(x, n):
+   res = 1
+   while n > 0:
+      if (n % 2 != 0):
+         res = res * x
 
-print(computePowerV2(100, 1))
+      n //= 2
+      x = x * x
+   return res
+print(computePowerV3(10, 2))
