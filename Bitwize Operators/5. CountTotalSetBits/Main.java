@@ -15,12 +15,14 @@ public class Main {
   // 13 1 1 0 1
   // 14 1 1 1 0
   // 15 1 1 1 1
-  b if(n==0)return 0;
+
+static countTotalSetBits(int n) {
+  if(n==0)return 0;
   int x = (int) (Math.log(n) / Math.log(2));
   // System.out.println(n + " " + x + " " + Math.pow(2, x));
   System.out.println(n+" "+((int)Math.pow(2,x-1))+" "+(n-(int)Math.pow(2,x)));return((int)Math.pow(2,x-1)*x)+(n-(int)Math.pow(2,x)+1)+
 
-  countTotalSetBits(n - (int) Math.pow(2, x));
+  ;
   }
 
   public static void main(String[] args) {

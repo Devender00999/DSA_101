@@ -1,1 +1,0 @@
- n - (int) Math.pow(2, x)
