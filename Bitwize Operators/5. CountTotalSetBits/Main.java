@@ -16,14 +16,13 @@ public class Main {
   // 14 1 1 1 0
   // 15 1 1 1 1
 
-static countTotalSetBits(int n) {
-  if(n==0)return 0;
-  int x = (int) (Math.log(n) / Math.log(2));
-  // System.out.println(n + " " + x + " " + Math.pow(2, x));
-  System.out.println(n+" "+((int)Math.pow(2,x-1))+" "+(n-(int)Math.pow(2,x)));return((int)Math.pow(2,x-1)*x)+(n-(int)Math.pow(2,x)+1)+
-
-  ;
-  }
+   static int countTotalSetBits(int n) {
+      if (n == 0) return 0;
+      int x = (int) (Math.log(n) / Math.log(2));
+      int powerValue = (int)Math.pow(2,x);
+      
+      return ((powerValue >> 1) * x) + (n-powerValue + 1) + countTotalSetBits(n - powerValue);
+   }
 
   public static void main(String[] args) {
     System.out.println(countTotalSetBits(16));

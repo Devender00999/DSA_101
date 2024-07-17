@@ -27,4 +27,8 @@ import math
 def countTotalSetBitsV2(num):
    if num == 0: return num
    x = math.floor(math.log2(num))
-   return int(math.pow(2, x - 1)) * x + (num - int(math.pow(2, x)) + 1) + countTotalSetBitsV2(num - int(math.pow(2, x)))
+   powerOf2x = int(math.pow(2, x))
+   return (powerOf2x >> 1) * x + (num - powerOf2x + 1) + countTotalSetBitsV2(num - powerOf2x)
+
+print(countTotalSetBitsV2(10))
+print(countTotalSetBits(10))
