@@ -32,7 +32,7 @@ for i in range(1, 255 + 1):
 # T(n): O(1) with some precalculations
 # S(n): O(1)
 def getCountOfSetBitsV3(num):
-   return lookupTable[(num & 255)] + lookupTable[(num >> 8) & 255] + lookupTable[(num >> 16) & 255] + lookupTable[(num >> 24) & 255]
+   lookupTable[(num & 255)] + lookupTable[(num >> 8) & 255] + lookupTable[(num >> 16) & 255] + lookupTable[(num >> 24) & 255]
 
 print(getCountOfSetBits(567567))
 print(getCountOfSetBitsV2(567567))
