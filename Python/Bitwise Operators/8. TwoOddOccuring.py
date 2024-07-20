@@ -32,7 +32,7 @@ def twoOddOccuringV2(numList = []):
    xorOfList = numList[0]
    for i in numList[1:]:
       xorOfList ^= i
-   k = (xorOfList & ( ~(xorOfList - 1)))
+   k = (xorOfList & -xorOfList)
    res1 = 0; res2 = 0
    for i in numList:
       if ((k & i) != 0):
