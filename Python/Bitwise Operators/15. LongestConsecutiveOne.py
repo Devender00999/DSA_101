@@ -22,5 +22,26 @@ def longestConsicutive1(n):
         max = counter
     return max
 
+# idea is to use right shift operator to shift number perform & with n until it becomes 0
+# T(n): O(log(n))
+# S(1): O(1)
+def longestConsecutiveOne(n):
+    count = 0
+    while (n > 0):
+        n = n & n << 1
+        count += 1
+    return count
 
-print(longestConsicutive1(1511))
+# example
+# 1011110
+# 0111100 => n << 1
+# 0011100 =>  &n n << 1
+# 0111000 => n << 1
+# 0011000 => n & n << 1
+# 0110000 => n << 1
+# 0010000 => n & n << 1
+# 0100000 => n << 1
+# 0000000 => n & n << 1
+
+
+print(longestConsecutiveOne(0b111011111))
