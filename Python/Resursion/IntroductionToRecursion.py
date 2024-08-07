@@ -70,7 +70,7 @@ def printBinary(n):
     printBinary(n // 2)
     print(n % 2, end="")
 
-printBinary(20)
+# printBinary(20)
 # 16
 
 # Step 1
@@ -89,3 +89,27 @@ printBinary(20)
 
 
 # 1 + 1 + 1 + 1 + 0
+
+
+# tail recursive function: it does not do anything after recusive call
+# compiler replaces recusive call with normal go to statement
+def function(n):
+    if (n == 0): return
+    print(n)
+    function(n - 1)
+
+# function(14)
+
+# non tail recursive function
+def function2(n):
+    if (n == 0): return 
+    function2(n - 1)
+    print(n)
+
+# converted function2(a non tail recusive function) to tail recursive function
+def function3(n, k = 1):
+    if (n == 0): return 
+    print(k)
+    function3(n - 1, k + 1)
+
+function3(10, 1)
