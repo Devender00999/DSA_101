@@ -6,13 +6,14 @@
 # o/p: 6765
 
 # recurrence relation: T(n) = T(n-1) + T(n - 2) + 1 
+# T(n): O(2^n)
 # 
 def findNthFibonacci(n):
-    if (n == 1 or n == 2):
-        return 1
+    if (n == 0): return 0
+    if (n == 1 ): return 1
     else: 
         return findNthFibonacci(n - 1) + findNthFibonacci(n - 2)
 
-print(findNthFibonacci(8))
+print(findNthFibonacci(4))
 
 
