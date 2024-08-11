@@ -8,8 +8,8 @@
 
 # d: number of digits in n
 # Recurrence Relation = T(n) = T(n / 10) + θ(1)
-# T(n): θ(d)
-# S(n): θ(d)
+# T(n): O(log(n))
+# S(n): O(log(n))
 def sumOfDigits(n):
     if (n <= 0):
         return 0
