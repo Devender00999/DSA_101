@@ -46,9 +46,6 @@ def powerOfNReverseV3(n, r):
         return (power * power) % 1000000007
     else: return (power * power * n) % 1000000007
 
-    
-
-
-print(powerOfNReverseV1(12, 21))
-print(powerOfNReverseV2(12, 21))
-print(powerOfNReverseV2(12, 21))
+# print(powerOfNReverseV1(12, 3))
+# print(powerOfNReverseV2(12, 3))
+# print(powerOfNReverseV3(12, 3))
