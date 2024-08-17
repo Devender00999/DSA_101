@@ -13,8 +13,6 @@
 # Recurrence Relation: T(n) = 2T(n - 1) + θ(1)
 # T(n): O(2^n)
 # S(n): (n)
-
-
 def towerOfHanoi(n, a, b, c):
     if n == 0:
         return
