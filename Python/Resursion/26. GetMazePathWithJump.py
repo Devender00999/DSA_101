@@ -11,12 +11,10 @@
 def getMazePath(sr, sc, dr, dc):
     if sr == dr and sc == dc:
         return [""]
-    if sr > dr or sc > dc:
-        return []
     
     paths = []
     # horizontal paths
-    for ms in range(1, dc - sc + 1 and (dr - sr + 1)):
+    for ms in range(1, dc - sc + 1):
         dPath = getMazePath(sr, sc + ms, dr, dc)
         for path in dPath:
             paths.append("h" + str(ms) + path)
@@ -34,4 +32,4 @@ def getMazePath(sr, sc, dr, dc):
             paths.append("d" + str(ms) + path)
 
     return paths
-print(getMazePath(1,1,3, 3))
+print(getMazePath(1,1,2, 2))
