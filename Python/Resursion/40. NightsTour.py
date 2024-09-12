@@ -4,7 +4,7 @@ def printNightTour(cells, move, r, c):
     elif (move == (len(cells) * len(cells))):
         cells[r][c] = move
         displayChessBoard(cells)
-        cells[r][c] = 0
+        return
     cells[r][c] = move
     printNightTour(cells, move + 1, r - 2, c + 1)
     printNightTour(cells, move + 1, r - 1, c + 2)
