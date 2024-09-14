@@ -1,7 +1,10 @@
 # to check if given number is lucky or not(a lucky number is a number that remains if we start removing every, 2nd, 3rd...nth number)
 
 # using loop
-def printLuckyNumber(n):
+
+# T(n): O(n ^ 2)
+# S(b): O(n)
+def printLuckyNumberLoop(n):
     k = 1
     arr = []
     for i in range(n):
@@ -18,4 +21,16 @@ def printLuckyNumber(n):
         return True
     except:
         return False
-(print(printLuckyNumber(7)))
+
+# Recurrence Relation: T(n) = T(n - n / c) 
+# T(n): O(sqrt(n))
+# S(b): O(sqrt(n))
+def printLuckyNumber(pos, pas):
+    if pos < pas:
+        return True
+    if pos % pas == 0:
+        return False
+    return printLuckyNumber(pos - (pos // pas), pas + 1)
+
+print(printLuckyNumber(34534, 2))
+print(printLuckyNumberLoop(34534))
