@@ -10,10 +10,10 @@
 import math
 # T(n): O(n)
 # S(n): O(1)
-def getSecondLargestElementV2(arr):
+def getSecondLargestElement(arr):
     max = -math.inf
     for i in range(len(arr)):
-        if (arr[i] > max):
+        if (arr[i] > max):                  
             max = arr[i]
     secondMax = 0
     for i in range(len(arr)):
@@ -21,4 +21,18 @@ def getSecondLargestElementV2(arr):
             secondMax = arr[i]
     return secondMax
 
-print(getSecondLargestElementV2([4, 10, 20, 4, 23, 23]))
+# print(getSecondLargestElement([4, 10, 20, 4, 23, 23]))
+# T(n): O(n)
+# S(n): O(1)
+def getSecondLargestElementV2(arr):
+    res = -1
+    max = 0
+    for i in range(len(arr)):
+        if (arr[i] > arr[max]):
+            res = max
+            max = i
+        if res == max:
+            res = -1
+    return arr[res]
+
+print(getSecondLargestElementV2([10, 20, 4, 23, 25]))
