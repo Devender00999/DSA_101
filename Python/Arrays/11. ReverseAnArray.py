@@ -11,4 +11,17 @@ def reverseArray(arr):
         tempArr.append(arr[i])
     return tempArr
 
-print(reverseArray([10, 2, 30, 40]))
+# T(n): O(n)
+# S(n): O(1)
+def reverseArrayV2(arr):
+    high = len(arr) - 1
+    low = 0
+    while (low < high):
+        temp = arr[low]
+        arr[low] = arr[high]
+        arr[high] = temp
+        high -= 1
+        low += 1
+    return arr
+
+print(reverseArrayV2([10, 2, 30, 40]))
